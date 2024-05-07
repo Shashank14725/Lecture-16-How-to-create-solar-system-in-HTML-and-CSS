@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Solar system</title>
+    <style>
+        body {
+            background-image: url("./milkyway2.png");
+            background-size: cover;
+        }
+
+        .common {
+            position: absolute;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        .sun {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            margin: 250px auto;
+            background-image: url("./sun.png");
+            background-size: cover;
+            position: relative;
+        }
+
+        .mercury {
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background-image: url("./mercury.png");
+            background-size: cover;
+            position: absolute;
+            bottom: 275px;
+            right: 610px;
+            margin: 150px auto;
+            animation-name: mercuryanimation;
+            animation-duration: 1s;
+
+            transform-origin: -102px 20px;
+            animation-play-state: running;
+        }
+
+        @keyframes mercuryanimation {
+            to {
+                transform: rotate(0deg);
+            }
+
+            from {
+                transform: rotate(-359deg);
+            }
+        }
+
+        .venus {
+            width: 70px;
+            height: 70px;
+            border-radius: 70px;
+            background-image: url("./venus.png");
+            background-size: cover;
+            position: absolute;
+            bottom: 410px;
+            right: 510px;
+            animation-name: venusanimation;
+            animation-duration: 2s;
+            transform-origin: -180px 40px;
+            animation-play-state: running;
+
+        }
+
+        @keyframes venusanimation {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateZ(359deg);
+            }
+        }
+
+        .earth {
+            width: 80px;
+            height: 80px;
+            border-radius: 80px;
+            background-image: url("./Earth.png");
+            background-size: cover;
+            position: absolute;
+            bottom: 408px;
+            right: 400px;
+            transform-origin: -250px center;
+            animation-name: earthanimation;
+            animation-duration: 3s;
+            animation-play-state: running;
+            
+        }
+
+        @keyframes earthanimation {
+            to {
+                transform: rotateZ(0deg);
+            }
+
+            from {
+                transform: rotateZ(-359deg);
+            }
+        }
+        .moon{
+            width: 20px;
+            height: 20px;
+            background: rgb(119, 107, 107);
+            border-radius: 20px;
+            bottom: 30px;
+            right: -45px;
+            animation-name: moonanimation;
+            animation-duration: 1s;
+            transform-origin: -56px center;
+
+        }
+        @keyframes moonanimation{
+            0%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(359deg);   
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" common sun"></div>
+    <div class=" common mercury"></div>
+    <div class="common venus"></div>
+    <div class="common earth">
+        <div class=" common moon"></div>
+    </div>
+
+</body>
+
+</html>
